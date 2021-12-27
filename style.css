@@ -1,5 +1,7 @@
 /*GOOGLE FONTS*/
 @import url('https://fonts.googleapis.com/css2?family=Limelight&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+
 
 /*VARIABLES CSS*/
 :root {
@@ -111,16 +113,17 @@ img{
 }
 
 p{
+    font-family:'Oswald';
+
+    text-shadow: 1px 0 1px rgb(255, 255, 255), 
+    0 1px 1px rgb(255, 255, 255), 
+    -1px 0 1px rgb(255, 255, 255), 
+    0 -1px 1px rgb(255, 255, 255);
     width: 100px;
     height: 100px;
     padding: 4px;
     position: absolute;
-    font-weight: 600;
-    color: var(--white-color);
-    text-shadow: 1px 0 1px #000, 
-    0 1px 1px #000, 
-    -1px 0 1px #000, 
-    0 -1px 1px #000;
+    color: rgb(26, 2, 54);
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;

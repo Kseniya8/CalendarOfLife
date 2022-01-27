@@ -1,9 +1,10 @@
 'use strict'
 // node modules
 const express = require('express');
+const path = require('path');
 
 // routers
-const homeRouter = require('./routes/homeRouter')
+const homeRouter = require('./homeRouter')
 
 
 const app = express();
@@ -12,7 +13,7 @@ const app = express();
 app.use(express.json({ extended: false, limit: '2mb' }));
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false, limit: '2mb' }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'images')));
 
 // routers
 app.use('/', homeRouter)

@@ -1,15 +1,19 @@
 {
   "name": "calendaroflife",
   "version": "1.0.0",
+  "private": true,
   "description": "",
-  "main": "main.js",
   "dependencies": {
     "express": "^4.17.1",
+    "path": "^0.12.7",
     "vue": "^2.6.14"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
   "scripts": {
-    "start": "node app.js",
+    "start": "node appBack.js",
+    "serve": "nodemon appBack.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "browser": {

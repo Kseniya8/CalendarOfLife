@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json({ extended: false, limit: '2mb' }));
 //app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.urlencoded({ extended: false, limit: '2mb' }));
-app.use(express.static(path.join(__dirname, 'images')));
+app.use(express.static(path.join(__dirname, 'front')));
 
 // routers
 app.use('/', homeRouter)

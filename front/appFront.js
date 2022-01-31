@@ -446,3 +446,5 @@ gsap.from('.home__title', { opacity: 0, duration: 1, delay: 1.3, y: 30 })
 gsap.from('.home__description', { opacity: 0, duration: 1, delay: 1.2, y: 60 })
 gsap.from('.home__input', { opacity: 0, duration: 1, delay: .9, y: 120 })
 gsap.from('.home__img', { opacity: 0, duration: 1, delay: .3, y: 30 })
+
+//INSTAGRAM

@@ -2,13 +2,17 @@
 // node modules
 const express = require('express');
 const path = require('path');
+const mustacheExpress = require("mustache-express");
 
 // routers
 const homeRouter = require('./homeRouter')
 
-
 const app = express();
 
+// view engine setup
+app.engine('html', mustacheExpress());
+app.set('views', path.join(__dirname, 'view'));
+app.set('view engine', 'html');
 
 app.use(express.json({ extended: false, limit: '2mb' }));
 //app.use(bodyParser.urlencoded({ extended: true }));

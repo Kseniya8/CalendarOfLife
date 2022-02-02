@@ -245,7 +245,7 @@ let infoKroc = [
     { message: 'Продавец бумажных стаканчиков', img: '' },
     { message: '19', img: '' },
     { message: 'Женится на Этель Флеминг', img: '' },
-    { message: '21', img: 'http://denniskingphoto.com/MansonClassPhotos/1951/Ethel-Fleming.jpg' },
+    { message: '21', img: '' },
     { message: '22', img: '' },
     { message: '23', img: '' },
     { message: '24', img: '' },

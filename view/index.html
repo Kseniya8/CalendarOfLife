@@ -54,15 +54,19 @@
                     <img src="images/img6.png" alt="" data-speed="2" class="move">
                 </div>
 
-                <div class="home__data">
+                <div id="sectionSearch" class="home__data">
                     <h1 class="home__title">Calendar<br> of Life</h1>
                     <span class="home__description">look at what you spend <br>your days of life on</span>
                     <form action="">
-                        <input required class="home__input" name="text" type="search"
-                            placeholder="enter instagram username" />
-                        <input class="home__input" name="yers_old" type="number" required
-                            placeholder="how old is this person?" />
-                        <input class="home__input" type="submit" value="Search">
+                        <input required class="home__input" type="search" placeholder="enter instagram username"
+                            v-model="username" />
+                        <input required class="home__input" type="number" placeholder="how old is this person?"
+                            v-model="age" />
+                        <input id="buttonSearch" class="home__input" type="button" value="Search"
+                            v-on:click="searchButtonClick()" />
+                        <div id="no-result">
+                            <span class="home__description" v-text="err"></span>
+                        </div>
                     </form>
                 </div>
             </div>

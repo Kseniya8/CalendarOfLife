@@ -407,6 +407,43 @@ document.querySelectorAll('a[href^="#"').forEach(link => {
     });
 });
 
+//INSTAGRAM
+let vueInput;
+vueInput = new Vue({
+    el: '#sectionSearch',
+    data: {
+        username: '',
+        age: '',
+        address: '',
+        err: ''
+    },
+    methods: {
+        searchButtonClick: function () {
+            if (this.username == '')
+                return this.err = "Пожалуйста введите имя аккаунта";
+            if (this.age == null || this.age == '' || this.age < 1)
+                return this.err = "Пожалуйста введите корректный возраст";
+            this.err = '';
+            
+            this.address = '/search?username=' + this.username + '&age=' + this.age;
+
+            var request = new XMLHttpRequest();
+            request.open('GET', this.address);
+            request.setRequestHeader("Content-Type", "application/json");
+            request.onreadystatechange = function () {
+                if (request.readyState === 4 && request.status === 200) {
+                    var answer = JSON.parse(request.responseText);
+                    vueInput.ShowResult(answer);
+                }
+            }
+            request.send();
+        },
+        ShowResult: function (answer) {
+
+        }
+    }
+});
+
 /*MENU SHOW & HIDDEN */
 const navMenu = document.getElementById('nav-menu'),
     toggleMenu = document.getElementById('nav-toggle'),
@@ -447,4 +484,4 @@ gsap.from('.home__description', { opacity: 0, duration: 1, delay: 1.2, y: 60 })
 gsap.from('.home__input', { opacity: 0, duration: 1, delay: .9, y: 120 })
 gsap.from('.home__img', { opacity: 0, duration: 1, delay: .3, y: 30 })
 
-//INSTAGRAM
+

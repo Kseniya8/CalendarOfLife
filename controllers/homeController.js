@@ -12,7 +12,6 @@ exports.searchInfo = (req, res, next) => {
     ];
 
     params = {}
-    let skip = 0
 
     for (key in req.query) {
         if (name_fields.indexOf(key) != -1 && req.query[key])
@@ -21,34 +20,36 @@ exports.searchInfo = (req, res, next) => {
 
     let url = 'https://www.instagram.com/' + params.username;
     // получаем html инсты
-    rp(url)
-        .then(function (html) {
-            //console.log(html);
-            let arrURLandYear = [];
-            let foundPos = 0;
+    // rp(url)
+    //     .then(function (html) {
+    //         console.log(html);
+    //         let arrURLandYear = [];
+    //         let foundPos = 0;
 
-            while (true) {
-                let indexStrStartURL = html.indexOf('150},{"src"', foundPos) + 13;
-                let indexStrFinishURL = html.indexOf('","config_width":240', foundPos);
+    //         while (true) {
+    //             let indexStrStartURL = html.indexOf('150},{"src"', foundPos) + 13;
+    //             let indexStrFinishURL = html.indexOf('","config_width":240', foundPos);
 
-                if (indexStrFinishURL < 0) break; //точка останова
+    //             if (indexStrFinishURL < 0) break; //точка останова
 
-                let searchStringURL = html.slice(indexStrStartURL, indexStrFinishURL);
-                searchStringURL = searchStringURL.replace('\u0026', '&');
+    //             let searchStringURL = html.slice(indexStrStartURL, indexStrFinishURL);
+    //             searchStringURL = searchStringURL.replace('\u0026', '&');
 
-                let indexStrYear = html.indexOf('tagging', indexStrFinishURL);
-                let searchStringYear = html.slice(indexStrYear - 5, indexStrYear);
+    //             let indexStrYear = html.indexOf('tagging', indexStrFinishURL);
+    //             let searchStringYear = html.slice(indexStrYear - 5, indexStrYear);
 
-                foundPos = indexStrYear + 1; // продолжаем со следующей позиции
-                arrURLandYear.push({ "URL": searchStringURL, "year": searchStringYear });
-            }
+    //             foundPos = indexStrYear + 1; // продолжаем со следующей позиции
+    //             arrURLandYear.push({ "URL": searchStringURL, "year": searchStringYear });
+    //             console.log(foundPos);
+    //             console.log(arrURLandYear);
+    //         }
 
-            console.log(arrURLandYear);
-        })
+    //         console.log(arrURLandYear);
+    //     })
 
-        .catch(function (err) {
-            console.log(err);
-        });
+    //     .catch(function (err) {
+    //         console.log(err);
+    //     });
 
 
     // res.json({ forms: forms })

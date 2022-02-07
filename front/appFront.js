@@ -180,7 +180,7 @@ let infoChanel = [
     { message: '28', img: 'https://myrouble.ru/wp-content/uploads/2017/09/chanel-artur-1.jpg' },
     { message: '29', img: '' },
     { message: 'Открыла 2й бутик', img: '' },
-    { message: 'Появилась ее первая коллекция одежды для отдыха и спорта', img: '' },
+    { message: 'Появилась ее первая коллекция для отдыха и спорта', img: '' },
     { message: 'В 32 открыла свой первый Дом моды', img: 'https://phonoteka.org/uploads/posts/2021-03/1616640834_16-p-yarko-krasnii-fon-17.jpg' },
     { message: 'Имеет статус кутюрье', img: 'https://assets.vogue.ru/photos/600adfd975f2a82ad297eaf5/master/w_1600,c_limit/w990-4.jpeg' },
     { message: '34', img: '' },
